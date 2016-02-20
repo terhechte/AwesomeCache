@@ -23,6 +23,7 @@
 		554E42451C7758C700958E84 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC91FB81A7C552900C81E10 /* Cache.swift */; };
 		554E42461C7758C700958E84 /* CacheObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC91FB91A7C552900C81E10 /* CacheObject.swift */; };
 		554E42491C775DD100958E84 /* AwesomeCacheOSX.h in Headers */ = {isa = PBXBuildFile; fileRef = 554E42481C775DD100958E84 /* AwesomeCacheOSX.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		554E424A1C77630200958E84 /* AwesomeCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC91FAB1A7C54B200C81E10 /* AwesomeCacheTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -459,6 +460,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				554E424A1C77630200958E84 /* AwesomeCacheTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -708,7 +710,7 @@
 				INFOPLIST_FILE = AwesomeCache/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.aschuch.AwesomeCache;
 				PRODUCT_NAME = AwesomeCache;
 				SDKROOT = macosx;
@@ -735,7 +737,7 @@
 				INFOPLIST_FILE = AwesomeCache/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.aschuch.AwesomeCache;
 				PRODUCT_NAME = AwesomeCache;
 				SDKROOT = macosx;
@@ -752,7 +754,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "AwesomeCache OS XTests/Info.plist";
+				INFOPLIST_FILE = AwesomeCache/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aschuch.AwesomeCache.AwesomeCache-OS-XTests";
@@ -769,7 +771,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "AwesomeCache OS XTests/Info.plist";
+				INFOPLIST_FILE = AwesomeCache/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.aschuch.AwesomeCache.AwesomeCache-OS-XTests";
