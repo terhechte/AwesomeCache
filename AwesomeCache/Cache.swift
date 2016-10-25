@@ -41,7 +41,7 @@ public class Cache<T: NSCoding> {
 			cacheDirectory = d
 		} else {
             let url = NSFileManager.defaultManager().URLsForDirectory(.CachesDirectory, inDomains: .UserDomainMask).first!
-			cacheDirectory = url.URLByAppendingPathComponent("com.aschuch.cache/\(name)")
+			cacheDirectory = url.URLByAppendingPathComponent("com.aschuch.cache/\(name)")!
 		}
 		
 		// Create directory on disk if needed
@@ -239,8 +239,8 @@ public class Cache<T: NSCoding> {
 	private func urlForKey(key: String) -> NSURL {
 		let k = sanitizedKey(key)
 		return cacheDirectory
-                .URLByAppendingPathComponent(k)
-                .URLByAppendingPathExtension("cache")
+                .URLByAppendingPathComponent(k)!
+                .URLByAppendingPathExtension("cache")!
 	}
 	
 	private func sanitizedKey(key: String) -> String {
