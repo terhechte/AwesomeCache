@@ -46,7 +46,7 @@ class AwesomeCacheTests: XCTestCase {
         XCTAssertNotNil(cache.objectForKey("remove 1"), "Get first non-nil object")
         XCTAssertNotNil(cache.objectForKey("remove 2"), "Get second non-nil object")
 
-        let expectation = expectationWithDescription("Remove All Objects")
+        let expectation = self.expectation(description: "Remove All Objects")
 
         cache.removeAllObjects {
             XCTAssertNil(cache.objectForKey("remove 1"), "Get first deleted object")
@@ -54,7 +54,7 @@ class AwesomeCacheTests: XCTestCase {
             expectation.fulfill()
         }
 
-        waitForExpectationsWithTimeout(4) { error in
+        waitForExpectations(timeout: 4) { error in
             if let error = error {
                 print("\n\n\nError: \(error.localizedDescription)\n\n\n")
             }
@@ -84,9 +84,9 @@ class AwesomeCacheTests: XCTestCase {
     func testObjectExpiry() {
         let cache = try! Cache<NSString>(name: "testObjectExpiry")
         
-        cache.setObject("NeverExpires", forKey: "never", expires: .Never)
-        cache.setObject("ExpiresIn2Seconds", forKey: "2Seconds", expires: .Seconds(2))
-        cache.setObject("ExpiresAtDate", forKey: "atDate", expires: .Date(NSDate().dateByAddingTimeInterval(4)))
+        cache.setObject("NeverExpires", forKey: "never", expires: .never)
+        cache.setObject("ExpiresIn2Seconds", forKey: "2Seconds", expires: .seconds(2))
+        cache.setObject("ExpiresAtDate", forKey: "atDate", expires: .date(Date().addingTimeInterval(4)))
         
         XCTAssertNotNil(cache.objectForKey("never"), "Never expires")
         XCTAssertNotNil(cache.objectForKey("2Seconds"), "Expires in 2 seconds")
@@ -111,7 +111,7 @@ class AwesomeCacheTests: XCTestCase {
         
         cache.setObjectForKey("blockExecuted", cacheBlock: { successBlock, failureBlock in
             executed = true
-            successBlock("AddedString", .Never)
+            successBlock("AddedString", .never)
         }, completion: { object, isLoadedFromCache, error in
             XCTAssertNotNil(object, "Cached object not nil")
             XCTAssertEqual("AddedString", object!, "Get cached object")
@@ -131,7 +131,7 @@ class AwesomeCacheTests: XCTestCase {
         
         cache.setObjectForKey("blockNotExecuted", cacheBlock: { successBlock, failureBlock in
             executed = true
-            successBlock("SometingElse", .Never)
+            successBlock("SometingElse", .never)
         }, completion: { object, isLoadedFromCache, error in
             XCTAssertNotNil(object, "Cached object not nil")
             XCTAssertEqual("AddedString", object!, "Get cached object")
